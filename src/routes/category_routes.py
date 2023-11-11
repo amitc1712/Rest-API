@@ -5,15 +5,15 @@ from controllers.category_controller import (
     update_category,
 )
 
-blueprint = Blueprint("blueprint", __name__)
+category_blueprint = Blueprint("category_blueprint", __name__)
 
 # Get All Categories
-blueprint.route("/", methods=["GET"])(get_categories)
+category_blueprint.route("/", methods=["GET"])(get_categories)
 
 
 # Create new category
-blueprint.route("/create", methods=["POST"])(add_category)
+category_blueprint.route("/create", methods=["POST"])(add_category)
 
 
 # Update a Category
-blueprint.route("/update/<CategoryID>", methods=["PUT"])(update_category)
+category_blueprint.route("/update/<CategoryID>", methods=["PUT"])(update_category)
